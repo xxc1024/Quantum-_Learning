@@ -12,7 +12,11 @@
 2. 两比特泡利矩阵张量基共有 16 个算符(含$I\otimes I$) ,去掉常数项$I\otimes I$后得到 15 维, 得到 `X.shape =(N,15)`, 每行是一个量子态的特征
 3. 这步由 `pauli_expectation_15(rho)` 完成, 见 `features.py`
 ## 三 -- 生成数据集并保存
-1. 一族 Werner-like 态（参数 λ 随机采样）$$\rho(\lambda)=\lambda\left|\Phi^+\right\rangle\langle\Phi^+|+\left(1-\lambda\right)\frac I4,\quad\lambda\in[0,1]$$其中：$\left | \Phi ^+ \right \rangle = \frac {\left | 00\right \rangle + \left | 11\right \rangle }{\sqrt {2}}$ (Bell 态), $\frac{I}{4}$是两比特的最大混合态
+1. 一族 Werner-like 态（参数 λ 随机采样）
+   $$
+   \rho(\lambda)=\lambda\left|\Phi^+\right\rangle\langle\Phi^+|+\left(1-\lambda\right)\frac I4,\quad\lambda\in[0,1]
+   $$
+   其中：$\left | \Phi ^+ \right \rangle = \frac {\left | 00\right \rangle + \left | 11\right \rangle }{\sqrt {2}}$ (Bell 态), $\frac{I}{4}$是两比特的最大混合态
 2. 随机混合态（Ginibre 方式采样）
 	1. $G\in\mathbb{C}^{4\times4},\quad A=GG^\dagger,\quad\rho=\frac{A}{\mathrm{Tr}(A)}$
 	2. $G$ 是随机复高斯矩阵
